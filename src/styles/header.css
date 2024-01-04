@@ -1,0 +1,48 @@
+.container-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 3rem;
+  background-color: bisque;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.header-title {
+  padding-left: 1rem;
+}
+
+.options-menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+  margin-right: 2rem;
+  list-style-type: none;
+}
+
+.container-header .open {
+  display: block;
+  margin-right: 6rem;
+}
+
+.container-header .box-nav .options-menu {
+  display: none;
+}
+
+.container-header .close {
+  display: none;
+  margin-right: 6rem;
+}
+
+.container-header .open,
+.container-header .close {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.link {
+  text-decoration: none;
+}
