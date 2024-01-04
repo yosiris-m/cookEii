@@ -7,5 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Yosiris Mariñez",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "locatorjs": "^0.4.2"
+  }
 }
