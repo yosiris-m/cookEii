@@ -4,13 +4,57 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-   <!--<link rel="stylesheet" href="../styles/header.css">-->
+    <link rel="stylesheet" href="../../styles/createAccount.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <script
+    src="https://kit.fontawesome.com/a22a8f4330.js"
+    crossorigin="anonymous"
+  ></script>
   </head>
-  <body>
-    <!-- Create account -->
-    <section id="account" class="">
-      <p>Create acount</p>
-      <a href="../index.html">Cancelar</a>
-    </section>
-  </body>
+  <body class="body-create-account">
+    <header class="go-back">
+      <p>Welcome to CookeII create account</p>
+      <a class="link-back" href="../index.html">Inicio</a> 
+    </header> 
+          <section class="container-form">
+              <img
+              class="logo"
+              src="/src/images/logo2.png"
+              alt="logo"
+            />                 
+            <form class="form" action="" method="post">
+              <label for="" class="label-box">
+                <i class="fa-solid fa-user icons"></i> 
+                <span class="vertical-line"></span>
+                <input class="iput-create" type="text"  placeholder="Cook Eii"  />  
+                </label>
+              <label for="" class="label-box">
+                <i class="fa-solid fa-envelope icons"></i>
+                <span class="vertical-line"></span>
+               <input class="iput-create" type="email" placeholder="cookeii@gmail.com" /> 
+              </label>
+              <label for="" class="label-box">
+                <i class="fa-solid fa-lock icons"></i>
+                <span class="vertical-line"></span>
+                <input class="iput-create" type="password"  placeholder="password" />
+              </label>
+              <label for="" class="label-box">
+                <i class="fa-solid fa-rotate-left icons"></i>
+                <span class="vertical-line"></span>
+                <input class="iput-create" type="password"  placeholder="repeat password" />
+              </label>
+            </form>
+            <div class="button-container">
+            <button class="button-create">
+              <a class="button-link" href="">Crear cuenta</a>
+            </button>
+            <nav class="account-l">
+            <a class="create-account" href="../login/login.html">Inciar sesión</a>
+            </nav>
+            </div>
+          </section>
+        </div>
+      
+      <script src="../../js/html-components/header.js"></script>
+    </body>
 </html>
