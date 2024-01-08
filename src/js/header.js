@@ -1,4 +1,4 @@
-function updateHeader() {
+function addEventsToHeader() {
   const open = document.getElementById('open');
   const close = document.querySelector(".close");
   const options = document.querySelector(".options-menu");
@@ -26,4 +26,3 @@ function updateHeader() {
     }
   }
 }
-document.addEventListener("DOMContentLoaded", updateHeader);
