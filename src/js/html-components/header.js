@@ -6,7 +6,7 @@ class Header extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
         <header id="header" class="container-header">
-        <img class="logo" src="/src/images/logo2.png" alt="logo" /> 
+        <img class="logo" src="/src/images/logo.png" alt="logo" /> 
           <nav class="box-nav">
             <div class="botons"> 
               <span id="open" class="open"><i class="fa-solid fa-bars"></i></span>
