@@ -1,7 +1,10 @@
 .body {
-  background-color: #e1d7cd;
+  padding: 0;
+  margin: 0;
+
+  position: relative;
 }
 
-.main {
+.main-home {
   margin-top: 4rem;
 }

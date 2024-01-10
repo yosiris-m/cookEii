@@ -1,0 +1,13 @@
+.main-detail {
+  margin-top: 4rem;
+}
+
+h1 {
+  text-align: right;
+}
+.container-detail {
+  background-color: #e1d7cd;
+  height: 100%;
+  max-width: 70rem;
+  margin: auto;
+}

@@ -1,0 +1,155 @@
+.hearder-search {
+  position: fixed;
+  top: 3rem;
+  z-index: 2;
+  width: 100%;
+  background-color: white;
+}
+
+.form-search {
+  background-color: rgb(192, 21, 192);
+  border-radius: 30rem;
+  padding: 0.1rem;
+  position: relative;
+  margin: 1rem 0 0.5rem 0;
+
+  @media all and (min-width: 768px) {
+    width: 30rem;
+    left: 30%;
+  }
+}
+
+.input-search {
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 2rem;
+}
+
+.icon-delete {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: gray;
+}
+
+.icon-search {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: gray;
+}
+
+/* Styles for list card */
+
+.box-card {
+  padding-bottom: 1rem;
+  margin-top: 7rem;
+
+  @media all and (min-width: 768px) {
+    padding-top: 1rem;
+  }
+}
+
+.container-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 1rem;
+  padding: 0 0.5rem;
+
+  @media all and (min-width: 768px) {
+    margin: 0 auto;
+    max-width: 60rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+
+.list-item {
+  box-sizing: border-box;
+  background-color: #ebdbea;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(164, 238, 174, 0.705);
+  margin-bottom: 1rem;
+
+  @media all and (min-width: 768px) {
+    width: 14rem;
+    margin: 0;
+  }
+}
+
+.link-detail {
+  text-decoration: none;
+  color: rgb(27, 26, 27);
+}
+
+.img-card {
+  border-radius: 8px;
+  width: 100%;
+
+  @media all and (min-width: 768px) {
+    width: 100%;
+    height: 12rem;
+  }
+}
+
+.box-img-tile {
+  position: relative;
+  text-align: center;
+}
+.title-card {
+  background-color: rgba(255, 255, 255, 0.877);
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+  font-size: 1rem;
+  position: absolute;
+  left: 0.5rem;
+  bottom: 4%;
+  z-index: 1;
+  width: 90%;
+  border-radius: 0.2rem;
+  font-weight: bold;
+
+  @media all and (min-width: 768px) {
+    left: 0.3rem;
+  }
+}
+
+.state-like {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem 1rem 0;
+  margin-left: 0.3rem;
+}
+.user-card {
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+.ico-card {
+  color: rgb(148, 99, 7);
+  padding-right: 0.2rem;
+}
+
+.ico-like {
+  color: rgb(85, 85, 85);
+  cursor: pointer;
+}
+
+.liked {
+  color: #a11dc2;
+}
+
+.notLiked {
+  color: rgb(85, 85, 85);
+}

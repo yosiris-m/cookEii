@@ -14,8 +14,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1;
-  margin-bottom: 4rem;
+  z-index: 3;
 }
 
 .header-title {
@@ -45,6 +44,7 @@ body {
 .botons .open {
   display: block;
   margin-right: 3rem;
+  color: white;
 
   @media all and (min-width: 768px) {
     margin-right: 4rem;
@@ -54,6 +54,7 @@ body {
 .botons .close {
   display: none;
   margin-right: 3rem;
+  color: white;
 
   @media all and (min-width: 768px) {
     margin-right: 4rem;
@@ -67,10 +68,10 @@ body {
   right: 0;
 }
 
-li {
+/* li {
   background: rgba(210, 174, 240, 0.966);
   line-height: 2.3rem;
-}
+} */
 .link {
   text-decoration: none;
   padding-left: 0.5rem;
@@ -85,4 +86,9 @@ li {
 
 .link:hover {
   background: rgba(100, 3, 185, 0.74);
+}
+
+.logo {
+  width: 6rem;
+  height: 3rem;
 }
