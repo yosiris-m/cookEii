@@ -1,3 +1,4 @@
+// import {dataJson} from "../../data/data-json";
 const data = [
   {
     id:1,
@@ -80,25 +81,57 @@ const data = [
 
 ];
 
-console.log(data);
+console.log("home",data);
 class Home extends HTMLElement {
   constructor() {
     super();
     this.likeStates = {};
+    this.filterCook = "";
+    this.data = data;
+  }
+
+  handleCookChange(ev) {
+    this.filterCook = ev.target.value.toLowerCase();
+    this.render();
+  }
+
+  handleFilterCook(ev) {
+    this.filterCook = ev.detail.filterCook.toLowerCase();
+    this.render();
+  }
+
+
+  handledReset(){
+    const inputSearch = document.getElementById('input-search');
+    inputSearch.value = ""; 
+    this.render()
+    console.log("clik")
   }
 
   connectedCallback() {
+    this.render();
+
+    const inputSearch = document.getElementById('input-search');
+    inputSearch.addEventListener('input', (ev) => this.handleCookChange(ev));
+
+    this.addEventListener('filterChange', (ev) => this.handleFilterCook(ev));
+  }
+
+
+  render() { 
     this.innerHTML = `
     <header class="hearder-search">
-      <form class="form-search" method="post" action>
-        <div class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></div>
-          <input type="text" class="input-search" placeholder="Buscar recetas por...">
-        <div class="icon-delete"><i class=""><i class="fa-solid fa-xmark"></i></i></div>
+      <form class="form-search" method="get" action>
+        <div  for="name" class="icon-search"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <input type="text" name="name" id="input-search" class="input-search" placeholder="Buscar recetas por..." value="${this.filterCook}">
+        <button class="icon-delete" onclick="${() => this.handleReset()}"><i class=""><i class="fa-solid fa-xmark"></i></i></button>
       </form>
     </header>
     <section class="box-card">
     <ul class="container-list">
-        ${data.map(
+        ${this.data
+          .filter((item) => item.title.toLowerCase().includes(this.filterCook))
+          .map(
           (item) => `
             <li class="list-item">
               <a class="link-detail" href="components/detail.html">
@@ -108,12 +141,12 @@ class Home extends HTMLElement {
                 </div>
                 <p class="user-card">
                     <i class="fa-solid fa-user fa-1x ico-card"></i>
-                      <span>${item.author}</span>
+                     <span>${item.author}</span>
                 </p>
               </a>              
               <div class="state-like">
                 <span>
-                  <i class="fa-solid fa-circle fa-xs ico-card"></i>
+                  <i class="fa-solid fa-circle fa-xs ico-card circle"></i>
                   ${item.state}
                 </span>
                 <div class="ico-like" id="like${item.id}"  onclick="this.closest('common-home').toggleLiked(${item.id})">
@@ -126,6 +159,7 @@ class Home extends HTMLElement {
       </ul>
   </section>
     `;
+
   }
   
   toggleLiked(itemId) {
@@ -142,6 +176,7 @@ class Home extends HTMLElement {
   }
   
 
+  
 
 }
 
