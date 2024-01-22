@@ -8,13 +8,13 @@ body {
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  height: 3rem;
+  height: 4rem;
   background-color: #bb72dd;
   border-bottom: solid 1px rgba(167, 18, 147, 0.315);
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 7;
 }
 
 .header-title {
@@ -25,24 +25,28 @@ body {
   background-image: linear-gradient(rgb(235, 228, 234), rgb(209, 190, 209));
 }
 
-.container-header .box-nav .options-menu {
-  display: none;
+.link {
+  text-decoration: none;
+  height: 100%;
+  width: 6rem;
+  border: 1px solid rgb(96, 96, 97);
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
 }
 
-.options-menu {
-  list-style-type: none;
-  width: 9rem;
-  text-align: center;
-  line-height: 1.5;
+.link:hover {
+  background: rgba(100, 3, 185, 0.74);
+}
 
-  @media all and (min-width: 768px) {
-    margin-right: 0.1rem;
-    margin-top: 2.4rem;
-  }
+.logo {
+  width: 6rem;
+  height: 3rem;
 }
 
 .botons .open {
-  display: block;
   margin-right: 3rem;
   color: white;
 
@@ -68,27 +72,27 @@ body {
   right: 0;
 }
 
-/* li {
-  background: rgba(210, 174, 240, 0.966);
-  line-height: 2.3rem;
-} */
-.link {
-  text-decoration: none;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  color: aliceblue;
-  background: rgba(119, 13, 212, 0.43);
+.options-menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  background: #bb72dd;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.349);
-  padding-bottom: 0.2rem;
-  padding-top: 0.2rem;
-  border-radius: 3%;
-}
+  visibility: hidden;
+  margin-top: 4rem;
+  margin-right: 1rem;
+  width: 100%;
 
-.link:hover {
-  background: rgba(100, 3, 185, 0.74);
+  @media all and (min-width: 768px) {
+    margin-right: 1rem;
+    margin-top: 3rem;
+    padding: 2rem 1rem;
+    width: 100%;
+  }
 }
-
-.logo {
-  width: 6rem;
-  height: 3rem;
+.box-nav {
+  border: 1pex solid wheat;
+}
+.closed {
+  visibility: hidden;
 }

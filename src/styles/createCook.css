@@ -1,0 +1,55 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Patrick Hand", cursive;
+  font-weight: 400;
+  font-style: italic;
+  background-image: url("../images/cover.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.main-create {
+  margin: 4rem auto;
+  background-color: rgb(224, 216, 211);
+  max-width: 60rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0 auto;
+}
+
+.ingredient-container {
+}
+.preparation-container {
+}
+
+.head-create {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.img-principal {
+  width: 20rem;
+  height: 10rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*background-color: rgb(230, 169, 120);*/
+}
+.input-file {
+  display: block;
+}
+.time-prep {
+  display: flex;
+  flex-direction: column;
+}
+.img-pr {
+  width: 15rem;
+  height: 9rem;
+}

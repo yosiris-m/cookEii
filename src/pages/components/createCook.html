@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CookeII</title>
+    <link rel="icon" href="../../images/favico.ico" />
+    <script
+      src="https://kit.fontawesome.com/a22a8f4330.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../../styles/createCook.css" />
+    <link rel="stylesheet" href="../../styles/header.css" />
+  </head>
+  <body class="">
+    <header id="header" class="container-header">
+      <a class="link-home" href="../index.html">
+        <i class="fa-solid fa-caret-left fa-lg"></i></a>
+      <img class="logo" src="/src/images/logo.png" alt="logo" /> 
+    </header>
+   <main class="main-create" >
+      <h1>crear recesta</h1>
+     <form action="" class="form">
+      <div class="head-create">
+        <div>
+          <label for="">Titulo
+            <input type="text">
+          </label>
+          <p class="time-prep">
+              <label for="">Comensales
+                <input type="number">
+              </label>
+              <label for="">Tiempo preparación
+              <input type="number" >
+              </label>
+            </p>
+        </div> 
+        <div class="img-principal">
+          <input id="fileInput" type="file" value="files" class="input-file" name="file"accept="image/*" style="display: none">
+          <div id="imgPreview">
+            <span id="imageText">Selecciona una imagen</span>
+           
+          </div> <button id="fileSelectButton" type="button"><i class="fa-solid fa-image"></i></button>
+        </div>
+       </div>
+
+       
+        <p> 
+          <label for="">Estado:</label>
+           <label for="remision">
+            <input type="radio" name="state" value="remision" id=""> 
+            Remisión</label> 
+            <label for="brote">
+              <input type="radio" name="brote" value="brote" id=""> 
+              Brote leve-moderado
+            </label>
+            <label for="brote">
+               <input type="radio" name="brote" value="brote" id=""> 
+               Brote
+             </label> 
+        </p>  
+            <div class="ingredient-container" id="ingredientContainer1">
+              <p>Ingredientes</p>
+              <div id="element-Ing">
+                <p class="input-ad">
+                  <label for="ingredient"  id="label">
+                    <input type="text" class="iput-delete1" name="ingredient" value="" placeholder="Ej: 500ml agua">
+                    <button type="delete"  onclick="deletIputOne(this)" name="delete"><i class="fa-regular fa-trash-can"></i></button>
+                  </label>
+                </p>
+                <p class="input-ad">
+                  <label for="ingredient"  id="label">
+                    <input type="text" class="iput-delete2" name="ingredient" value="" placeholder="Ej: 500ml agua">
+                    <button type="delete" class="delete" onclick="deletIputTwo(this)" name="delete"><i class="fa-regular fa-trash-can"></i></button>
+                  </label>
+                </p>
+              </div>
+              <button type="button" onclick="addNewIngredient()">+ Ingrediente</button>
+            </div>
+             <div class="preparation-container" >
+              <p>Pasos preparación</p>
+              <div id="element-prep"></div>
+                <button type="button" onclick="addNewPreparation()">+ Pasos</button>
+           </div>
+     </form>
+   </main> 
+   <script src="../../js/createCoook.js"></script>
+  </body>
+</html>

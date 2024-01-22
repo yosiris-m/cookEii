@@ -1,21 +1,26 @@
+/*Styles for search*/
 .hearder-search {
   position: fixed;
-  top: 3rem;
-  z-index: 2;
+  top: 3.3rem;
+  z-index: 4;
   width: 100%;
-  background-color: white;
 }
 
 .form-search {
-  background-color: rgb(192, 21, 192);
+  background-color: rgba(192, 21, 192, 0.774);
   border-radius: 30rem;
   padding: 0.1rem;
   position: relative;
   margin: 1rem 0 0.5rem 0;
+  z-index: 6;
+  @media all and (min-width: 450px) and (max-width: 767px) {
+    width: 50%;
+    left: 24.5%;
+  }
 
   @media all and (min-width: 768px) {
     width: 30rem;
-    left: 30%;
+    left: 31%;
   }
 }
 
@@ -25,7 +30,7 @@
   outline: none;
   width: 100%;
   box-sizing: border-box;
-  padding: 0.5rem 2rem;
+  padding: 0.3rem 2rem;
 }
 
 .icon-delete {
@@ -35,6 +40,8 @@
   transform: translateY(-50%);
   cursor: pointer;
   color: gray;
+  appearance: none;
+  border: none;
 }
 
 .icon-search {
@@ -45,17 +52,30 @@
   cursor: pointer;
   color: gray;
 }
-
-/* Styles for list card */
-
-.box-card {
-  padding-bottom: 1rem;
-  margin-top: 7rem;
-
-  @media all and (min-width: 768px) {
-    padding-top: 1rem;
-  }
+/*Styles for saved*/
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 15rem;
 }
+
+.all-list {
+  appearance: none;
+  border: none;
+  background-color: #ebe6e1;
+}
+
+.all-border {
+  border-bottom: 1px solid blueviolet;
+}
+.saved-list {
+  appearance: none;
+  border: none;
+  background-color: #ebe6e1;
+}
+
+/*Styles for list*/
 
 .container-list {
   list-style: none;
@@ -65,12 +85,24 @@
   row-gap: 1rem;
   padding: 0 0.5rem;
 
+  @media all and (min-width: 500px) and (max-width: 767px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+
   @media all and (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2rem;
+    padding: 0px;
+  }
+
+  @media all and (min-width: 1220px) {
     margin: 0 auto;
-    max-width: 60rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    row-gap: 2rem;
   }
 }
 
@@ -79,8 +111,13 @@
   background-color: #ebdbea;
   width: 100%;
   border-radius: 8px;
-  border: 1px solid rgba(164, 238, 174, 0.705);
+  border: 1px solid rgba(118, 14, 167, 0.705);
   margin-bottom: 1rem;
+
+  @media all and (min-width: 4px) and (max-width: 767px) {
+    width: 15rem;
+    margin: 0 auto;
+  }
 
   @media all and (min-width: 768px) {
     width: 14rem;
@@ -91,15 +128,20 @@
 .link-detail {
   text-decoration: none;
   color: rgb(27, 26, 27);
+
+  position: relative;
 }
 
 .img-card {
   border-radius: 8px;
   width: 100%;
+  object-fit: cover;
+  height: 12rem;
+  transition: 0.3s ease-in-out;
 
   @media all and (min-width: 768px) {
     width: 100%;
-    height: 12rem;
+    height: 14rem;
   }
 }
 
@@ -107,21 +149,14 @@
   position: relative;
   text-align: center;
 }
-.title-card {
+
+.title-items {
   background-color: rgba(255, 255, 255, 0.877);
   padding: 0.5rem 0.3rem 0.5rem 0.3rem;
   font-size: 1rem;
-  position: absolute;
-  left: 0.5rem;
-  bottom: 4%;
-  z-index: 1;
-  width: 90%;
   border-radius: 0.2rem;
   font-weight: bold;
-
-  @media all and (min-width: 768px) {
-    left: 0.3rem;
-  }
+  margin: 0 1rem;
 }
 
 .state-like {
@@ -129,7 +164,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0 0.5rem 1rem 0;
+  padding: 0 1rem 1rem 0.5rem;
   margin-left: 0.3rem;
 }
 .user-card {
@@ -137,8 +172,12 @@
   margin-left: 0.5rem;
 }
 .ico-card {
-  color: rgb(148, 99, 7);
+  color: #ab70b9;
   padding-right: 0.2rem;
+}
+
+.circle {
+  color: #ab70b9;
 }
 
 .ico-like {
