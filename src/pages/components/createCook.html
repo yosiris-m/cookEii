@@ -16,39 +16,47 @@
     <header id="header" class="container-header">
       <a class="link-home" href="../index.html">
         <i class="fa-solid fa-caret-left fa-lg"></i></a>
+        <p>Crear recesta</p>
       <img class="logo" src="/src/images/logo.png" alt="logo" /> 
     </header>
    <main class="main-create" >
-      <h1>crear recesta</h1>
+    
      <form action="" class="form">
-      <div class="head-create">
-        <div>
-          <label for="">Titulo
-            <input type="text">
-          </label>
-          <p class="time-prep">
-              <label for="">Comensales
-                <input type="number">
-              </label>
-              <label for="">Tiempo preparación
-              <input type="number" >
-              </label>
-            </p>
-        </div> 
-        <div class="img-principal">
-          <input id="fileInput" type="file" value="files" class="input-file" name="file"accept="image/*" style="display: none">
-          <div id="imgPreview">
-            <span id="imageText">Selecciona una imagen</span>
-           
-          </div> <button id="fileSelectButton" type="button"><i class="fa-solid fa-image"></i></button>
-        </div>
-       </div>
-
-       
-        <p> 
-          <label for="">Estado:</label>
+      <fieldset class="head-create">
+          <div class="box-create">
+            <label class="titles-create text-aling-let" for="title">Titulo</label>
+              <input type="text" class="input-width-title input-focus" placeholder="Paella de pollo y conejo" value="title">
+            <p class="time-prep">
+                <label for="" class="lab-M">Comensales:
+                  <input type="number" class="iput-w input-focus input-t-M"> 
+                </label>
+                <label for="">Tiempo preparación:
+                <input type="number" class="iput-w input-focus input-ra-M " >
+                </label>
+                
+              </p>
+          </div> 
+          <div class="img-principal">
+            <input id="fileInput" type="file" value="files" class="input-file" name="file"accept="image/*" style="display: none">
+            <div class="box-preview-file" id="fileSelectButton" > 
+              <p id="imgPreview" class="file-preview">
+                <span class="image-text">Muestra una imagen de tu plato terminado.</span> 
+                <span class="image-text">Adjuntando una imagen</span>         
+              </p> 
+              <button class="button-file" type="button">
+                <img
+                class="icon-file"
+                src="/src/images/camara.png"
+                alt="Foto del plato terminado"
+              />  
+              </button>
+            </div>
+          </div>
+       </fieldset>
+        <fieldset class="text-aling-let"> 
+          <p class="state-title titles-create">Estado</p>
            <label for="remision">
-            <input type="radio" name="state" value="remision" id=""> 
+            <input type="radio" name="remision" value="remision" id=""> 
             Remisión</label> 
             <label for="brote">
               <input type="radio" name="brote" value="brote" id=""> 
@@ -58,32 +66,21 @@
                <input type="radio" name="brote" value="brote" id=""> 
                Brote
              </label> 
-        </p>  
-            <div class="ingredient-container" id="ingredientContainer1">
-              <p>Ingredientes</p>
-              <div id="element-Ing">
-                <p class="input-ad">
-                  <label for="ingredient"  id="label">
-                    <input type="text" class="iput-delete1" name="ingredient" value="" placeholder="Ej: 500ml agua">
-                    <button type="delete"  onclick="deletIputOne(this)" name="delete"><i class="fa-regular fa-trash-can"></i></button>
-                  </label>
-                </p>
-                <p class="input-ad">
-                  <label for="ingredient"  id="label">
-                    <input type="text" class="iput-delete2" name="ingredient" value="" placeholder="Ej: 500ml agua">
-                    <button type="delete" class="delete" onclick="deletIputTwo(this)" name="delete"><i class="fa-regular fa-trash-can"></i></button>
-                  </label>
-                </p>
-              </div>
-              <button type="button" onclick="addNewIngredient()">+ Ingrediente</button>
-            </div>
-             <div class="preparation-container" >
-              <p>Pasos preparación</p>
-              <div id="element-prep"></div>
-                <button type="button" onclick="addNewPreparation()">+ Pasos</button>
-           </div>
+          </fieldset>  
+          <fieldset class="">
+              <p class="titles-create text-aling-let">Ingredientes</p>
+                <div id="element-Ing" class="text-aling-let"></div>
+              <button type="button" class="buttons text-R-let" onclick="addNewIngredient()">+ Ingrediente</button>
+          </fieldset>
+          <fieldset class="preparation-container" >
+              <p class="titles-create text-aling-let">Pasos preparación</p>
+              <div class="element-prep text-aling-let" id="element-prep"></div>
+                <button type="button" class="buttons" onclick="addNewPreparation()">+ Pasos</button>
+          </fieldset>
      </form>
+     <button type="submit" class="buttons send-button" >Crear receta</button>
    </main> 
-   <script src="../../js/createCoook.js"></script>
+   <script src="../../js/create-cook/createCoook.js"></script>
+   <script src="../../js/create-cook/imagenPreview.js"></script>
   </body>
 </html>

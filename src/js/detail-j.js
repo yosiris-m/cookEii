@@ -15,6 +15,12 @@ function detail(itemId) {
         alt="${selectedItem.title}"/> 
         <div class="box-title">    
           <h2 class="title-detail">${selectedItem.title}</h2> 
+          <div class="flex-c-center"> 
+          <span class="mg-lef display-row-center">
+          <i class="fa-regular fa-clock"></i>
+            ${selectedItem.timePreparation}
+          </span>
+        </div>
           <div class="box-icons-title display-row-center">
             <div class="display-row-center">
                 <i class="fa-regular fa-user mg-lef icon"></i>
