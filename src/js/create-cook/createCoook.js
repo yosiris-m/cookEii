@@ -6,12 +6,13 @@ function addNewIngredient() {
   const inputIngredient = document.createElement("p");
   inputIngredient.classList.add("input-ad");
   inputIngredient.innerHTML = `
-    <label for="ingredient" class=""  id="label">
-    <i class="fa-solid fa-square squa-c"></i>
-      <input type="text" class="input-width input-focus" name="ingredient" value="" placeholder="Ej: 500ml agua">
+     <i class="fa-solid fa-square squa-c"></i>
+    <label for="ingredient" id="label" class="input-ing-prep input-width ">
+      <input type="text" class="input-focus" name="ingredient" value="" placeholder="Ej: 500ml agua" required>
     </label>
-    <button type="button" id="b" class="buttons buttons-delet" name="delete"><i class="fa-regular fa-trash-can"></i></button>
-  `;
+    <button type="button" class="buttons buttons-delet" name="delete"><i class="fa-regular fa-trash-can"></i></button>
+
+    `;
 
   createElementIngred.appendChild(inputIngredient);
 }
@@ -65,12 +66,13 @@ function addNewPreparation() {
   preparationCount++;
 
   inputPreparation.innerHTML = `
-    <label for="ingredient" class=" label-inp">
-        <i class="fa-solid fa-square squa-c"></i>
-        <input type="text" class="input-width input-focus input-1" id="ingredient" name="ingredient" value="ingredient" placeholder="Ej: leche">
+    <div class="box-prep-inp">
+    <i class="fa-solid fa-square squa-c"></i> 
+    <label for="ingredient" class="input-ing-prep input-width">
+        <input type="text" class=" input-focus  " id="ingredient" name="ingredient" value="" placeholder="Ej: Cortamos las patatas y las ponemos a cocinar" required>
     </label>
     <button type="delete" id="b" class="buttons buttons-delet" name="delete-preparation"><i class="fa-regular fa-trash-can"></i></button>
-    
+    </div>
     <div class="img-preparation">
     <input type="file" id="fileIngredient${preparationCount}" name="ingre-file" value="" name="file" accept="image/*" style="display: none">
     <div class="file-ingred" id="fileIngredientButton${preparationCount}">

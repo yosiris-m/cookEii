@@ -10,11 +10,35 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+.container-header-create {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 4rem;
+  background-color: #bb72dd;
+  border-bottom: solid 1px rgba(167, 18, 147, 0.315);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.head-title {
+  color: white;
+}
+.link-back {
+  color: white;
+  margin-left: 1rem;
+}
 .main-create {
-  margin: 5rem auto;
-  background-color: rgb(245, 245, 245);
-  max-width: 48rem;
+  margin: 4rem auto;
+  background-color: rgb(212, 211, 208);
+  width: 100%;
   text-align: center;
+
+  @media all and (min-width: 768px) {
+    max-width: 48rem;
+  }
 }
 .form {
   display: flex;
@@ -26,45 +50,82 @@ body {
 
 .head-create {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-top: 0;
+  flex-direction: column;
+
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
-.img-principal {
-  height: 11.3rem;
-  width: 18.4rem;
+.img-cook {
+  height: 100%;
+  width: 100%;
   text-align: center;
   background-color: #d6d6d4;
   position: relative;
+  border-radius: 8px;
+  margin-top: 1.3rem;
+
+  @media all and (min-width: 450px) and (max-width: 750px) {
+    width: 65%;
+    margin: 1.3rem auto;
+  }
+
+  @media all and (min-width: 768px) {
+    width: 17rem;
+    margin-top: 2rem;
+  }
 }
 .input-file {
   display: block;
 }
-.time-prep {
+.M-top {
+  margin-top: 1rem;
+  @media all and (min-width: 768px) {
+    margin-top: 3rem;
+  }
+}
+.diners-box {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #774b05f6;
+  font-size: 1rem;
+
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: left;
+  }
 }
 .img-pr {
-  width: 10rem;
-  height: 6rem;
+  width: 100%;
+  height: 100%;
 }
 
 .button-file {
-  width: 4rem;
-  height: 3rem;
   border-style: none;
   position: absolute;
   bottom: 0;
   right: 0;
-  background-color: #d6d6d4;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: 2.3rem;
+  height: 2rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.pading-text {
+  padding-top: 4rem;
 }
 
 .icon-file {
-  width: 3rem;
+  width: 100%;
+  height: 100%;
 }
+
 .file-preview {
   display: flex;
   flex-direction: column;
@@ -74,48 +135,72 @@ body {
 }
 .box-preview-file {
   border-radius: 2%;
-  height: 10rem;
-  display: flex;
-  margin-bottom: 3rem;
+  height: 16rem;
 }
 
 .info {
   font-size: 0.8rem;
-  text-align: center;
+  width: 10rem;
+  height: 100%;
+  padding-top: 0.2rem;
+  text-align: left;
+
+  @media all and (min-width: 768px) {
+    width: 15rem;
+  }
 }
 .image-text {
   padding-left: 1rem;
   margin-right: 1rem;
+  color: grey;
 }
 /*box-title style*/
 .box-create {
   display: flex;
   flex-direction: column;
-  margin-right: 2rem;
+
+  @media all and (min-width: 768px) {
+    margin-right: 2rem;
+  }
 }
 
 .input-width-title {
   width: 100%;
   height: 1.5rem;
-  padding: 0.3rem 2rem;
   border-radius: 0.25rem;
   border: none;
   background-color: #d6d6d4;
+  margin-top: 0.4rem;
+
+  @media all and (min-width: 450px) and (max-width: 750px) {
+    width: 60%;
+    margin: 0 auto;
+  }
 
   @media all and (min-width: 768px) {
+    padding: 0.3rem 2rem;
     width: 20rem;
   }
+}
+.input-ing-prep {
+  padding: 0px;
+  margin: 0px;
 }
 
 .input-width {
   width: 100%;
   height: 1.5rem;
-  padding: 0.3rem 2rem;
   border-radius: 0.25rem;
   border: none;
   background-color: #d6d6d4;
+  margin: 0;
+
+  @media all and (min-width: 450px) and (max-width: 750px) {
+    width: 100%;
+  }
 
   @media all and (min-width: 768px) {
+    padding: 0.3rem 2rem;
     width: 35rem;
   }
 }
@@ -130,31 +215,59 @@ body {
   background-color: #d6d6d4;
 }
 
-.input-1[value="ingredient"] {
-  background-color: #d6d6d4;
-}
-
 .iput-w {
-  width: 9rem;
+  width: 60%;
   height: 1.5rem;
   padding: 0.3rem 1rem;
   background-color: #d6d6d4;
   border-radius: 0.25rem;
+  margin-top: 0.5rem;
+
+  @media all and (min-width: 450px) and (max-width: 750px) {
+    width: 40%;
+    margin-top: 0;
+  }
+
+  @media all and (min-width: 768px) {
+    width: 9rem;
+  }
 }
 
 .input-ra-M {
-  margin-left: 3.5rem;
+  @media all and (min-width: 768px) {
+    margin-left: 1rem;
+  }
 }
 .input-t-M {
-  margin-left: 7.3rem;
+  @media all and (min-width: 768px) {
+    margin-left: 4.8rem;
+  }
 }
 
 .lab-M {
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
 }
 /*-prepration styles*/
 .input-prep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100%;
+
+  @media all and (min-width: 450px) and (max-width: 750px) {
+    align-items: self-start;
+  }
+
+  @media all and (min-width: 768px) {
+    align-items: self-start;
+  }
+}
+
+.box-prep-inp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
 }
 .img-preparation {
   width: 15rem;
@@ -195,19 +308,28 @@ body {
 }
 
 .buttons {
-  padding: 10px;
+  padding: 0.3rem;
   background-color: rgba(29, 153, 46, 0.726);
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+
+  @media all and (min-width: 768px) {
+    padding: 0.6rem;
+  }
 }
 
 .buttons:hover {
-  background-color: #3dd864;
+  background-color: #0aac04;
 }
 .buttons-delet {
+  margin-left: 0.2rem;
   background-color: rgb(196, 195, 195);
+
+  @media all and (min-width: 768px) {
+    margin-left: 0.3rem;
+  }
 }
 .buttons-delet:hover {
   background-color: #f02d2d;
@@ -221,10 +343,24 @@ fieldset {
 .titles-create {
   color: #ffa100;
   font-size: 1.3rem;
-}
+  text-align: center;
 
+  @media all and (min-width: 768px) {
+    text-align: left;
+  }
+}
+.font-size-input {
+  font-size: 1rem;
+}
 .squa-c {
   color: #ffa100;
+  font-size: 1rem;
+  padding-right: 0.2rem;
+  margin-left: 0px;
+
+  @media all and (min-width: 768px) {
+    font-size: 1.3rem;
+  }
 }
 .send-button {
   text-align: center;
@@ -233,8 +369,25 @@ fieldset {
   background-color: #ffa100;
 }
 .text-aling-let {
-  text-align: left;
+  @media all and (min-width: 768px) {
+    text-align: left;
+  }
+}
+.state-box {
+  display: flex;
+  flex-direction: column;
+  color: #774b05f6;
+  align-items: self-start;
+
+  @media all and (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 .text-R-let {
   text-align: center;
+}
+.input-ad {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
