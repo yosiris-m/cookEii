@@ -1,6 +1,4 @@
 body {
-  padding: 0px;
-  margin: 0px;
   font-family: "Patrick Hand", cursive;
   font-weight: 400;
   font-style: italic;
@@ -10,6 +8,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 .container-header-create {
   display: flex;
   align-items: center;
@@ -23,13 +22,16 @@ body {
   left: 0;
   z-index: 1;
 }
+
 .head-title {
   color: white;
 }
+
 .link-back {
   color: white;
   margin-left: 1rem;
 }
+
 .main-create {
   margin: 4rem auto;
   background-color: rgb(212, 211, 208);
@@ -37,9 +39,10 @@ body {
   text-align: center;
 
   @media all and (min-width: 768px) {
-    max-width: 48rem;
+    max-width: 47rem;
   }
 }
+
 .form {
   display: flex;
   flex-direction: column;
@@ -55,15 +58,16 @@ body {
   @media all and (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
+    padding: 2rem 1rem;
   }
 }
+
 .img-cook {
-  height: 100%;
   width: 100%;
   text-align: center;
-  background-color: #d6d6d4;
+  background-color: #c4c4c475;
   position: relative;
-  border-radius: 8px;
+  border-radius: 3px;
   margin-top: 1.3rem;
 
   @media all and (min-width: 450px) and (max-width: 750px) {
@@ -72,19 +76,15 @@ body {
   }
 
   @media all and (min-width: 768px) {
-    width: 17rem;
+    width: 70%;
     margin-top: 2rem;
   }
 }
+
 .input-file {
   display: block;
 }
-.M-top {
-  margin-top: 1rem;
-  @media all and (min-width: 768px) {
-    margin-top: 3rem;
-  }
-}
+
 .diners-box {
   display: flex;
   flex-direction: column;
@@ -98,9 +98,12 @@ body {
     justify-content: left;
   }
 }
+
 .img-pr {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 12rem;
+  border-radius: 1%;
+  box-shadow: 4px 4px 6px 4px rgba(0, 0, 0, 0.349);
 }
 
 .button-file {
@@ -131,11 +134,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 0.1 auto;
 }
+
 .box-preview-file {
-  border-radius: 2%;
-  height: 16rem;
+  border-radius: 1%;
 }
 
 .info {
@@ -149,11 +152,13 @@ body {
     width: 15rem;
   }
 }
+
 .image-text {
   padding-left: 1rem;
   margin-right: 1rem;
   color: grey;
 }
+
 /*box-title style*/
 .box-create {
   display: flex;
@@ -166,11 +171,13 @@ body {
 
 .input-width-title {
   width: 100%;
-  height: 1.5rem;
   border-radius: 0.25rem;
+  font-family: "Patrick Hand", cursive;
+  font-weight: 200;
   border: none;
-  background-color: #d6d6d4;
   margin-top: 0.4rem;
+  font-size: 1rem;
+  padding: 1rem;
 
   @media all and (min-width: 450px) and (max-width: 750px) {
     width: 60%;
@@ -182,6 +189,7 @@ body {
     width: 20rem;
   }
 }
+
 .input-ing-prep {
   padding: 0px;
   margin: 0px;
@@ -192,16 +200,38 @@ body {
   height: 1.5rem;
   border-radius: 0.25rem;
   border: none;
-  background-color: #d6d6d4;
-  margin: 0;
+  font-family: "Patrick Hand", cursive;
+  padding: 1rem;
 
   @media all and (min-width: 450px) and (max-width: 750px) {
     width: 100%;
   }
 
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 1220px) {
     padding: 0.3rem 2rem;
-    width: 35rem;
+    width: 36.8rem;
+  }
+}
+
+.textarea {
+  width: 100%;
+  border-radius: 0.25rem;
+  resize: none;
+  border: none;
+  font-family: "Patrick Hand", cursive;
+  padding: 0 1rem;
+  background: none;
+  line-height: 1.5rem;
+  height: 5rem;
+
+  @media all and (min-width: 450px) and (max-width: 750px) {
+    width: 100%;
+  }
+
+  @media all and (min-width: 1220px) {
+    padding: 0.5rem 2rem;
+    width: 36.8rem;
+    height: 8rem;
   }
 }
 
@@ -219,9 +249,9 @@ body {
   width: 60%;
   height: 1.5rem;
   padding: 0.3rem 1rem;
-  background-color: #d6d6d4;
   border-radius: 0.25rem;
   margin-top: 0.5rem;
+  font-family: "Patrick Hand", cursive;
 
   @media all and (min-width: 450px) and (max-width: 750px) {
     width: 40%;
@@ -230,23 +260,41 @@ body {
 
   @media all and (min-width: 768px) {
     width: 9rem;
+    text-align: left;
+  }
+}
+
+.diner {
+  color: #c47d0bf6;
+}
+
+.m-r {
+  margin-right: 1rem;
+  width: 55%;
+  color: #c47d0bf6;
+
+  @media all and (min-width: 768px) {
+    text-align: left;
   }
 }
 
 .input-ra-M {
   @media all and (min-width: 768px) {
-    margin-left: 1rem;
+    width: 100%;
   }
 }
+
 .input-t-M {
   @media all and (min-width: 768px) {
-    margin-left: 4.8rem;
+    margin-left: 3.8rem;
+    width: 90%;
   }
 }
 
 .lab-M {
   margin-bottom: 0.3rem;
 }
+
 /*-prepration styles*/
 .input-prep {
   display: flex;
@@ -269,13 +317,22 @@ body {
   align-items: center;
   width: 100%;
 }
+
 .img-preparation {
   width: 15rem;
+  height: 100%;
   background-color: #d6d6d4;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 1rem;
+  margin-bottom: 2.3rem;
+  border-radius: 0.5rem;
+
+  @media all and (min-width: 768px) {
+    margin-left: 1.3rem;
+    width: 35%;
+  }
 }
 
 .img-prepa {
@@ -283,11 +340,13 @@ body {
   height: 100%;
   padding: 0;
 }
+
 .file-ingred {
   display: flex;
   flex-direction: column;
   width: 70%;
 }
+
 .img-text {
   display: flex;
   flex-direction: column;
@@ -296,7 +355,9 @@ body {
   width: 100%;
   height: 100%;
   padding: 1rem 0 0 0;
+  font-family: "Patrick Hand", cursive;
 }
+
 .buton-img-file {
   width: 2.5rem;
   height: 2.5rem;
@@ -314,6 +375,7 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: "Patrick Hand", cursive;
 
   @media all and (min-width: 768px) {
     padding: 0.6rem;
@@ -323,6 +385,7 @@ body {
 .buttons:hover {
   background-color: #0aac04;
 }
+
 .buttons-delet {
   margin-left: 0.2rem;
   background-color: rgb(196, 195, 195);
@@ -331,6 +394,7 @@ body {
     margin-left: 0.3rem;
   }
 }
+
 .buttons-delet:hover {
   background-color: #f02d2d;
 }
@@ -349,9 +413,12 @@ fieldset {
     text-align: left;
   }
 }
+
 .font-size-input {
   font-size: 1rem;
+  font-family: "Patrick Hand", cursive;
 }
+
 .squa-c {
   color: #ffa100;
   font-size: 1rem;
@@ -362,32 +429,45 @@ fieldset {
     font-size: 1.3rem;
   }
 }
+
 .send-button {
-  text-align: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background-color: #ffa100;
+  background-color: #e29209c5;
+  width: 25%;
+  margin: 1rem auto;
 }
+
 .text-aling-let {
   @media all and (min-width: 768px) {
     text-align: left;
   }
 }
+
 .state-box {
   display: flex;
   flex-direction: column;
-  color: #774b05f6;
+  color: #c47d0bf6;
   align-items: self-start;
 
   @media all and (min-width: 768px) {
     flex-direction: row;
   }
 }
+
 .text-R-let {
   text-align: center;
 }
+
 .input-ad {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 1.2rem;
+  font-family: "Patrick Hand", cursive;
+}
+
+.label-font-weit {
+  font-weight: 200;
+  font-size: 1rem;
 }

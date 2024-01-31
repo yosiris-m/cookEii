@@ -13,6 +13,7 @@
   position: relative;
   margin: 1rem 0 0.5rem 0;
   z-index: 6;
+
   @media all and (min-width: 450px) and (max-width: 767px) {
     width: 50%;
     left: 24.5%;
@@ -52,6 +53,7 @@
   cursor: pointer;
   color: gray;
 }
+
 /*Styles for saved*/
 .nav-list {
   display: flex;
@@ -69,6 +71,7 @@
 .all-border {
   border-bottom: 1px solid blueviolet;
 }
+
 .saved-list {
   appearance: none;
   border: none;
@@ -76,7 +79,6 @@
 }
 
 /*Styles for list*/
-
 .container-list {
   list-style: none;
   display: flex;
@@ -128,7 +130,6 @@
 .link-detail {
   text-decoration: none;
   color: rgb(27, 26, 27);
-
   position: relative;
 }
 
@@ -167,10 +168,12 @@
   padding: 0 1rem 1rem 0.5rem;
   margin-left: 0.3rem;
 }
+
 .user-card {
   margin-top: 1rem;
   margin-left: 0.5rem;
 }
+
 .ico-card {
   color: #ab70b9;
   padding-right: 0.2rem;

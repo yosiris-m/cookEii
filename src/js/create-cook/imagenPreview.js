@@ -12,7 +12,9 @@ fileSelectButton.addEventListener(
   false
 );
 
+
 function handleFiles() {
+  
   if (this.files.length === 0) {
     return;
   }
@@ -31,3 +33,5 @@ function handleFiles() {
   info.innerHTML = `${this.files[0].name}: ${this.files[0].size} bytes`;
   imgPreview.appendChild(info);
 }
+
+

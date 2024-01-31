@@ -3,13 +3,12 @@ const createElementIngred = document.getElementById("element-Ing");
 const createElementPrep = document.getElementById("element-prep");
 
 function addNewIngredient() {
-  const inputIngredient = document.createElement("p");
+  const inputIngredient = document.createElement("section");
   inputIngredient.classList.add("input-ad");
   inputIngredient.innerHTML = `
-     <i class="fa-solid fa-square squa-c"></i>
-    <label for="ingredient" id="label" class="input-ing-prep input-width ">
-      <input type="text" class="input-focus" name="ingredient" value="" placeholder="Ej: 500ml agua" required>
-    </label>
+    <i class="fa-solid fa-square squa-c"></i>
+    <label for="ingredient" id="label" class="input-ing-prep "></label>
+    <input type="text" class="input-focus input-focu1 input-width " name="ingredient" value="" placeholder="Ej: 500ml agua" required>
     <button type="button" class="buttons buttons-delet" name="delete"><i class="fa-regular fa-trash-can"></i></button>
 
     `;
@@ -61,20 +60,19 @@ function handleFilesPreparations() {
 }
 
 function addNewPreparation() {
-  const inputPreparation = document.createElement("p");
+  const inputPreparation = document.createElement("section");
   inputPreparation.classList.add("input-prep");
   preparationCount++;
 
   inputPreparation.innerHTML = `
     <div class="box-prep-inp">
-    <i class="fa-solid fa-square squa-c"></i> 
-    <label for="ingredient" class="input-ing-prep input-width">
-        <input type="text" class=" input-focus  " id="ingredient" name="ingredient" value="" placeholder="Ej: Cortamos las patatas y las ponemos a cocinar" required>
-    </label>
-    <button type="delete" id="b" class="buttons buttons-delet" name="delete-preparation"><i class="fa-regular fa-trash-can"></i></button>
+      <i class="fa-solid fa-square squa-c"></i> 
+      <label for="ingredient" class="input-ing-prep"></label>
+        <input type="text" class=" input-width input-focus input-focu" id="ingredient" name="ingredient" value="" placeholder="Ej: Cortamos las patatas y las ponemos a cocinar" required>
+     <button type="delete" id="b" class="buttons buttons-delet" name="delete-preparation"><i class="fa-regular fa-trash-can"></i></button>
     </div>
     <div class="img-preparation">
-    <input type="file" id="fileIngredient${preparationCount}" name="ingre-file" value="" name="file" accept="image/*" style="display: none">
+    <input type="file" class="input-focu" id="fileIngredient${preparationCount}" name="ingre-file" value="" name="fileIngredient" accept="image/*" style="display: none">
     <div class="file-ingred" id="fileIngredientButton${preparationCount}">
       <div id="imgIngredientPreview${preparationCount}" class="img-text"></div>
         <button class="buton-img-file" type="button">
@@ -91,24 +89,24 @@ function addNewPreparation() {
 
   createElementPrep.appendChild(inputPreparation);
 
-  const fileIngredientButton = document.getElementById(
+  const filePreparationButton = document.getElementById(
     `fileIngredientButton${preparationCount}`
   );
-  const fileIngredientInput = document.getElementById(
+  const filePreparationInput = document.getElementById(
     `fileIngredient${preparationCount}`
   );
 
-  fileIngredientInput.addEventListener(
-    "change",
-    handleFilesPreparations,
+  filePreparationButton.addEventListener(
+    "click",
+    () => {
+      filePreparationInput.click();
+    },
     false
   );
 
-  fileIngredientButton.addEventListener(
-    "click",
-    () => {
-      fileIngredientInput.click();
-    },
+  filePreparationInput.addEventListener(
+    "change",
+    handleFilesPreparations,
     false
   );
 }
@@ -129,3 +127,4 @@ function handleDeletePrep(event) {
 document.addEventListener("DOMContentLoaded", function () {
   createElementPrep.addEventListener("click", handleDeletePrep);
 });
+

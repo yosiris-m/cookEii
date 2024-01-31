@@ -1,15 +1,19 @@
 "use strict";
+// main.js
+
 /**detail */
 function detail(itemId) {
   const selectedItem = data.find((item) => item.id === itemId);
   const detailCard = document.getElementById("detail-l");
+ 
+  // selectedItem.state == "remision" ? selectedItem.state = "Remisión" : null;
+  // selectedItem.state == "brote leve moderado" ? selectedItem.state = "Brote leve-moderado" : null;
+  // selectedItem.state == "brote" ? selectedItem.state = "Brote" : null;
 
-  if (selectedItem) {
-    console.log("detail", selectedItem);
-    const liCard = document.createElement("section");
-    liCard.classList.add("list-detail");
-    liCard.dataset.id = selectedItem.id;
-    liCard.innerHTML = `        
+  const liCard = document.createElement("section");
+  liCard.classList.add("list-detail");
+  liCard.dataset.id = selectedItem.id;
+  liCard.innerHTML = `        
       <div class="box-head patrick-hand-regular"> 
         <img class="img-detail" src="${selectedItem.image}"
         alt="${selectedItem.title}"/> 
@@ -27,7 +31,7 @@ function detail(itemId) {
                 <div class="flex-c-center"> 
                   <p class="icon-text">Raciones</p>
                   <span class="mg-lef display-row-center">
-                    ${selectedItem.cuantity}
+                    ${selectedItem.quantity}
                     <span class="mg-lef">Personas</span>
                   </span>
                 </div>
@@ -45,54 +49,74 @@ function detail(itemId) {
                   </span>
                 </div>
             </div>
-           
           </div>
         </div>
       </div> 
       <div class="box-butts">
-      <button class="button-wit edit icon-size"><i class="fa-regular fa-pen-to-square"></i></button>
-      <button class="button-wit  delete icon-size"><i class="fa-regular fa-trash-can"></i></button>
+      <button class="button-wit edit icon-size" id="edit"><i class="fa-regular fa-pen-to-square"></i></button>
+      <button class="button-wit  delete icon-size" id="delete"><i class="fa-regular fa-trash-can"></i></button>
     </div>
-      <article class="box-ingredient-preparation patrick-hand-regular"> 
-        <div class="ingredient">
-          <h3 class="mg-lef-M title-ing-prep">Ingredientes</h3>
-          <ul class="list-d">
-           ${selectedItem.ingredient
-             .map(
-               (ingredients) =>
-                 `<li class="list-ingredient"><i class="fa fa-check icon-check "></i>${ingredients}</li>`
-             )
-             .join("")}
+    <article class="box-ingredient-preparation patrick-hand-regular"> 
+      <div class="ingredient">
+        <h3 class="mg-lef-M title-ing-prep">Ingredientes</h3>
+        <ul class="list-d">
+          ${selectedItem.ingredient.map((ingredients) =>
+              `<li class="list-ingredient"><i class="fa fa-check icon-check "></i>${ingredients}</li>`
+            ).join("")}
           </ul>
         </div> 
-        <div class="box-preparation">
-          <h3 class="mg-lef-M title-ing-prep">Preparación</h3>  
-          <ol class="list-ol">
-            ${selectedItem.preparation
-              .map(
-                (step) =>
-                  `<li>
-                   <p>${step.descripton}</p>
-                   ${
-                     step.image
-                       ? `<img class="img-preparation" src="${step.image}" alt="Imagen de la preparación">`
-                       : ""
-                   }</li>`
-              )
-              .join("")}
+      <div class="box-preparation">
+        <h3 class="mg-lef-M title-ing-prep">Preparación</h3>  
+        <ol class="list-ol">
+          ${selectedItem.preparation.map((step) =>
+            `<li>
+              <p>${step.descripton}</p>
+              ${step.image? `<img class="img-preparation" src="${step.image}" alt="Imagen de la preparación">`: ""} </li>`)
+              .join("")
+          }
           </ol>
         </div>  
       </article>
-     `;
-    detailCard.appendChild(liCard);
-  } else {
-    console.error(`No se encontró un elemento con el ID: ${itemId}`);
-  }
+    `;
+
+  const editButton = liCard.querySelector(".edit");
+  const deleteButton = liCard.querySelector(".delete");
+
+  editButton.onclick = function () {
+    const urlParams = new URLSearchParams();
+
+    for (let valueKey in selectedItem) {
+      const value = valueKey === 'preparation' && Array.isArray(selectedItem[valueKey])
+        ? JSON.stringify(selectedItem[valueKey])
+        : selectedItem[valueKey];
+     
+        urlParams.set(valueKey, value);
+    }
+    const queryString = urlParams.toString();
+    window.location.href = `createCook.html?${queryString}`;
+    updateCook(
+      selectedItem.title,
+      selectedItem.cuantity,
+      selectedItem.timePreparation,
+      selectedItem.state,
+      selectedItem.author,
+      selectedItem.image,
+      selectedItem.ingredient,
+      selectedItem.preparation
+    );
+  };
+
+  deleteButton.onclick = function () {
+    console.log("eliminar");
+  };
+
+  detailCard.appendChild(liCard);
 }
 
 function renderItem() {
   const urlParams = new URLSearchParams(window.location.search);
   const id = Number.parseInt(urlParams.get("id"));
-
   detail(id);
 }
+
+

@@ -3,9 +3,9 @@ const data = [
   {
     id: 1,
     title: "Ensalada tropical con mandarina y granada",
-    cuantity: "4",
+    quantity: "4",
     timePreparation: "2 horas",
-    state: "Remisión",
+    state: "remision",
     like: "liked",
     author: "John Smith",
     image:
@@ -20,8 +20,9 @@ const data = [
     preparation: [
       {
         descripton:
-          "Hacer la receta de panqueques es súper fácil. Primero, reúne todos los ingredientes. Si no tienes harina leudante o preparada, que es harina de trigo que ya incluye levadura (también se llama harina de repostería), puedes usar harina de trigo normal y añadir una cucharadita de levadura química en polvo (polvo de hornear).",
-        image: "",
+          "Hacer la receta de panqueques es súper fácil. Primero, reúne todos los ingredientes. Si no tienes harina leudante o preparada, que es harina de trigo que ya incluye levadura (también se llama harina de repostería), puedes usar harina de trigo normal y añadir una cucharadita de levadura química en polvo (polvo de hornear)Hacer la receta de panqueques es súper fácil. Primero, reúne todos los ingredientes. Si no tienes harina leudante o preparada, que es harina de trigo que ya incluye levadura (también se llama harina de repostería), puedes usar harina de trigo normal y añadir una cucharadita de levadura química en polvo (polvo de hornear).",
+        image:
+      "https://1.bp.blogspot.com/-FZXLk2jGajE/VsCU8vVL9pI/AAAAAAAAWfU/yVHGFkDosQg/s1600/blogs%2Bcomida%2Bsana%2B%25283%2529.jpg",
       },
       {
         descripton:
@@ -65,9 +66,9 @@ const data = [
   {
     id: 2,
     title: "Espirales al tomate",
-    cuantity: "6",
+    quantity: "6",
     timePreparation: "2:20 horas",
-    state: "Brote leve-moderado",
+    state: "brote leve moderado",
     like: "liked",
     author: "Alvar carrasco",
     image:
@@ -97,24 +98,14 @@ const data = [
         image: "",
       },
 
-      {
-        descripton:
-          "Hacer la receta de panqueques es súper fácil. Primero, reúne todos los ingredientes. Si no tienes harina leudante o preparada, que es harina de trigo que ya incluye levadura (también se llama harina de repostería), puedes usar harina de trigo normal y añadir una cucharadita de levadura química en polvo (polvo de hornear).",
-        image: "",
-      },
-      {
-        descripton:
-          "Hacer la receta de panqueques es súper fácil. Primero, reúne todos los ingredientes. Si no tienes harina leudante o preparada, que es harina de trigo que ya incluye levadura (también se llama harina de repostería), puedes usar harina de trigo normal y añadir una cucharadita de levadura química en polvo (polvo de hornear).",
-        image: "",
-      },
     ],
   },
   {
     id: 3,
     title: "Pollo al horno con queso",
-    cuantity: "2",
+    quantity: "2",
     timePreparation: "45 minutos",
-    state: "Remisión",
+    state: "remision",
     like: "liked",
     author: "Luna carrasco",
     image:
@@ -159,9 +150,9 @@ const data = [
   {
     id: 4,
     title: "Pollo con verduras",
-    cuantity: "8",
+    quantity: "8",
     timePreparation: "2 horas",
-    state: "Remisión",
+    state: "remision",
     like: "liked",
     author: "Alvar Antonio silva",
     image:
@@ -206,9 +197,9 @@ const data = [
   {
     id: 5,
     title: "Pechuga a la plancha ",
-    cuantity: "2",
+    quantity: "2",
     timePreparation: "2 horas",
-    state: "Brote",
+    state: "brote",
     like: "liked",
     author: "Alvar carrasco",
     image:
@@ -253,9 +244,9 @@ const data = [
   {
     id: 6,
     title: "Pasta al tomate ",
-    cuantity: "6",
+    quantity: "6",
     timePreparation: "2 horas",
-    state: "Brote",
+    state: "brote",
     like: "Notliked",
     author: "Carlo luna",
     image:
@@ -271,16 +262,20 @@ const data = [
       {
         descripton:
           "Hacer la receta de panqueques es súper fácil. Primero, reúne todos los ingredientes. Si no tienes harina leudante o preparada, que es harina de trigo que ya incluye levadura (también se llama harina de repostería), puedes usar harina de trigo normal y añadir una cucharadita de levadura química en polvo (polvo de hornear).",
-        image: "",
+        image:
+      "https://1.bp.blogspot.com/-FZXLk2jGajE/VsCU8vVL9pI/AAAAAAAAWfU/yVHGFkDosQg/s1600/blogs%2Bcomida%2Bsana%2B%25283%2529.jpg",
       },
       {
         descripton:
           "Hacer la receta de panqueques es súper fácil. Primero, reúne todos los ingredientes. Si no tienes harina leudante o preparada, que es harina de trigo que ya incluye levadura (también se llama harina de repostería), puedes usar harina de trigo normal y añadir una cucharadita de levadura química en polvo (polvo de hornear).",
-        image: "",
+        image:
+      "https://1.bp.blogspot.com/-FZXLk2jGajE/VsCU8vVL9pI/AAAAAAAAWfU/yVHGFkDosQg/s1600/blogs%2Bcomida%2Bsana%2B%25283%2529.jpg",
       },
     ],
   },
 ];
+
+
 
 const searchContainer = document.getElementById("search");
 
@@ -328,23 +323,19 @@ listCard();
 const inputSearch = document.getElementById("input-search");
 inputSearch.addEventListener("input", cookList);
 const cookContainerList = document.getElementById("cook-list");
-const carouselContainer = document.getElementById("carousel-container");
 
-function handledReset() {
-  inputSearch.innerHTML = "";
-}
 
-function cookList() {
+ function cookList() {
   cookContainerList.innerHTML = "";
-  const filterKeyword = inputSearch.value.toLowerCase();
-  const likeStates = {};
+  const filterData = inputSearch.value.toLowerCase();
+  const saveCooks = {};
   let foundResults = false;
 
   function toggleLiked(itemId) {
     const likeIcon = document.getElementById(`like${itemId}`);
-    likeStates[itemId] = !likeStates[itemId];
+    saveCooks[itemId] = !saveCooks[itemId];
 
-    if (likeStates[itemId]) {
+    if (saveCooks[itemId]) {
       likeIcon.classList.add("liked");
     } else {
       likeIcon.classList.remove("liked");
@@ -352,15 +343,18 @@ function cookList() {
   }
 
   data.forEach(function (item) {
+      item.state == "remision" ? item.state = "Remisión": null; 
+      item.state == "brote leve moderado" ? item.state = "Brote leve-moderado": null;
+      item.state == "brote" ? item.state = "Brote": null;
     const dataList = item.title.toLowerCase();
-    if (dataList.includes(filterKeyword)) {
+    if (dataList.includes(filterData)) {
       foundResults = true;
 
       const liItem = document.createElement("li");
       liItem.classList.add("list-item");
       liItem.dataset.id = item.id;
       liItem.innerHTML = `
-         <div class="box" > 
+        <div class="box" > 
           <a class="link-detail " href="components/detail.html?id=${item.id}">
             <div class="box-img-tile">
               <img class="img-card" id="cardImage" src="${item.image}" alt="${item.title}">
@@ -397,3 +391,6 @@ function cookList() {
   }
 }
 cookList();
+function handledReset() {
+  inputSearch.innerHTML = "";
+}

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CookeII</title>
     <link rel="icon" href="../../images/favico.ico" />
-    <script
-      src="https://kit.fontawesome.com/a22a8f4330.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/a22a8f4330.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Patrick+Hand&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,200;0,700;0,800;1,800&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet">
     <link rel="stylesheet" href="../../styles/createCook.css" />
     <link rel="stylesheet" href="../../styles/header.css" />
   </head>
@@ -16,54 +17,66 @@
     <header id="header" class="container-header-create">
       <a class="link-back" href="../index.html">
         <i class="fa-solid fa-caret-left fa-lg"></i></a>
-      <small class="head-title">Crear recesta</small>
-      <img class="logo" src="/src/images/logo.png" alt="logo" /> 
+     
+      <img class="logo" src="/src/images/logo.png" alt="logo" />
     </header>
-   <main class="main-create" >
-      <form action="" class="form">
+    <main class="main-create">
+      <form action="" method="post" class="form" onsubmit="handleSubmitForm(event)">
+         <input type="hidden" name="recipe_id" id="createteId" value=""> 
+        <input type="hidden" name="recipe_id" id="updateId" value="">
+        <!-- <div class="head-title" id="title-createC"></div> -->
         <fieldset class="head-create">
           <div class="box-create">
             <label class="titles-create" for="title">Título</label>
-            <input type="text" class="input-width-title input-focus font-size-input" name="title" placeholder="Paella de pollo y conejo" value="" required>
-            <p class="diners-box M-top"> 
-              <label for="diners">Comensales:</label>
-                <input type="number" class="iput-w input-focus input-t-M font-size-input" name="diners" value="" placeholder="2" required> 
+            <input type="text" class="input-width-title input-focus" id="title" name="title"
+              placeholder="Paella de pollo y conejo" value="" required>
+            <p class="diners-box">
+              <label class="diner" for="quantity">Comensales:</label>
+              <input type="number" class="iput-w input-focus input-t-M font-size-input " id="quantity" name="quantity"
+                value="" placeholder="2" required>
             </p>
-            <div class="diners-box"> 
-              <label for="timePreparation">Tiempo preparación:</label>
-              <input type="text" class="iput-w input-focus input-ra-M font-size-input" name="timePreparation" value="" required placeholder="45 minutos">
+            <div class="diners-box">
+              <label class="m-r" for="timePreparation">Tiempo preparación:</label>
+              <input type="text" class="iput-w input-focus input-ra-M font-size-input" id="timePreparation"
+                name="timePreparation" value="" required placeholder="45 minutos">
             </div>
-          </div> 
+            <div class="diners-box">
+              <label class="m-r" for="author">Autor de la receta:</label>
+              <input type="text" class="iput-w input-focus input-ra-M font-size-input" id="author" name="author"
+                value="" required placeholder="Luis Martes">
+            </div>
+          </div>
           <div class="img-cook">
-            <input id="fileInput" type="file" value="" class="input-file" name="file"accept="image/*" style="display: none" required>
-            <div class="box-preview-file" id="fileSelectButton" > 
+            <input id="fileInput" type="file" value="" class="input-file" name="file" accept="image/*"
+              style="display: none" required>
+            <div class="box-preview-file" id="fileSelectButton">
               <p id="imgPreview" class="file-preview">
-                <span class="image-text pading-text">Muestra una imagen de tu plato terminado.</span> 
-                <span class="image-text">Adjuntando una imagen</span>         
-              </p> 
+                <span class="image-text pading-text">Muestra una imagen de tu plato terminado adjuntando una
+                  imagen.</span>
+              </p>
               <button class="button-file" type="button">
-                <img class="icon-file" src="/src/images/camara.png" alt="Foto del plato terminado"/>  
+                <img class="icon-file" src="/src/images/camara.png" alt="Foto del plato terminado" />
               </button>
             </div>
           </div>
         </fieldset>
-        <fieldset class="text-aling-let"> 
+        <fieldset class="text-aling-let">
           <p class="state-title titles-create">Estado</p>
-          <div class="state-box"> 
-           <label for="remision">
-            <input type="radio" name="remision" value="remision" id=""> 
-            Remisión</label> 
+          <div class="state-box">
+            <label for="Remision">
+              <input type="radio" name="state" id="Remision" value="remision" required>
+              Remisión</label>
             <label for="brote">
-              <input type="radio" name="brote" value="brote" id=""> 
+              <input type="radio" name="state" id="slightModerate" value="brote leve moderado"  required>
               Brote leve-moderado
             </label>
-            <label for="brote">
-              <input type="radio" name="brote" value="brote" id=""> 
-               Brote
-            </label> 
-          </div> 
-        </fieldset>  
-        <fieldset >
+            <label for="outbreak">
+              <input type="radio" name="state" id="outbreak" value="brote"   required>
+              Brote
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
           <p class="titles-create">Ingredientes</p>
           <div id="element-Ing" class="text-aling-let"></div>
           <button type="button" class="buttons text-R-let" onclick="addNewIngredient()">+ Ingrediente</button>
@@ -73,10 +86,15 @@
           <div class="text-aling-let" id="element-prep"></div>
           <button type="button" class="buttons" onclick="addNewPreparation()">+ Pasos</button>
         </fieldset>
+        <input type="submit" class="buttons send-button" value="Publicar">
       </form>
-      <button type="submit" class="buttons send-button" >Crear receta</button>
-    </main> 
-    <script src="../../js/create-cook/createCoook.js"></script>
+    </main>
+    <script src="../../js/create-cook/createCook.js"></script>
+    <script src="../../js/updateCook/updateCook.js"></script>
+    <script src="../../js/updateCook/showDataCook.js"></script>
+    <script src="../../js/detail-j.js"></script>
+    <script src="../../js/create-cook/createCoookForm.js"></script>
     <script src="../../js/create-cook/imagenPreview.js"></script>
   </body>
+
 </html>
